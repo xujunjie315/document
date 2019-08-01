@@ -33,6 +33,13 @@
     httpd.exe -k uninstall -n “Apache24″
 ```
 
+### apache开启重写模式
+
+* httpd.conf文件
+LoadModule reqtimeout_module libexec/apache2/mod_reqtimeout.so 　　把前面的#去掉
+Include /private/etc/apache2/extra/httpd-vhosts.conf　　把前面的#去掉
+AllowOverride　将denied  改为all
+
 ## 2.下载并安装php
 
 ### 将下载的php解压
