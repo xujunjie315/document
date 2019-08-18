@@ -47,46 +47,190 @@ Docker 仓库类似于代码仓库，它是Docker集中存放镜像文件的场�
 
 ### 4.1 docker基础命令
 
+* 帮助命令
 
+```bash
+    docker --help
+```
+
+* docker版本信息
+
+```bash
+    docker -v
+```
+
+* docker详细信息
+
+```bash
+    docker version
+```
+
+* 登陆docker hub
+
+```bash
+    docker login
+```
 
 ### 4.1 docker镜像管理
 
 * 搜索镜像
+
 ```bash
     docker search
 ```
+
 * 获取镜像
+
 ```bash
-    docker pull 
+    docker pull
 ```
+
 * 查看镜像
+
 ```bash
     docker images
 ```
+
+* 获取镜像的元数据
+
+```bash
+    docker inspect
+```
+
 * 删除镜像
+
 ```bash
     docker rmi
 ```
+
+* 将容器打包成镜像
+
+```bash
+    Docker commit
+```
+
+* dockerfile生成镜像
+
+```bash
+    docker build
+```
+
 * 导出镜像
+
 ```bash
     docker save centos > /tmp/docker_centos.tar
 ```
+
 * 导入镜像
+
 ```bash
     docker load < /tmp/docker_centos.tar
 ```
+
 * 镜像打标签
+
 ```bash
     docker tag centos centos:7.2
 ```
-### 4.2 docker容器管理
 
+* 推送镜像到docker hub
 
-* 查看镜像
 ```bash
-    
+    docker push xujunjie/centos
 ```
 
+### 4.2 docker容器管理
+
+* 创建容器
+
+```bash
+docker create
+```
+
+* 创建容器并启动
+
+```bash
+docker run
+```
+
+* 查看容器
+
+```bash
+docker ps
+```
+
+* 启动容器
+
+```bash
+docker start
+```
+
+* 重启容器
+
+```bash
+docker restart
+```
+
+* 停止容器
+
+```bash
+docker stop
+```
+
+* 杀掉一个运行容器
+
+```bash
+docker kill
+```
+
+* 删除容器
+
+```bash
+docker rm
+```
+
+* 进入容器
+
+```bash
+docker attach 容器编号
+ssh root@ip
+```
+
+* 创建为终端
+
+```bash
+docker exec
+```
+
+* 查看容器运行的进程
+
+```bash
+docker top
+```
+
+* 查看容器的端口映射
+
+```bash
+docker port
+```
+
+* 查看容器的日志
+
+```bash
+docker logs
+```
+
+* 容器和主机间的文件拷贝
+
+```bash
+docker cp
+```
+
+* 查看容器的底层信息
+
+```bash
+docker inspect
+```
 
 ## 2 参考
 

@@ -10,15 +10,71 @@ docker-compose -v
 
 ## 2. 常见命令
 
-* docker-compose ps
-* docker-compose logs
-* docker-compose build
-* docker-compose start
-* docker-compose stop
-* docker-compose up -d
-* docker-compose kill
-* docker-compose down
-* docker-compose run
+* 列出所有运行容器
+
+```bash
+docker-compose ps
+```
+
+* 查看服务日志输出
+
+```bash
+docker-compose logs
+```
+
+* 构建或者重新构建服务
+
+```bash
+docker-compose build
+```
+
+* 启动指定服务已存在的容器
+
+```bash
+docker-compose start
+```
+
+* 停止已运行的服务的容器
+
+```bash
+docker-compose stop
+```
+
+* 删除指定服务的容器
+
+```bash
+docker-compose rm
+```
+
+* 构建、启动容器
+
+```bash
+docker-compose up -d
+```
+
+* 通过发送 SIGKILL 信号来停止指定服务的容器
+
+```bash
+docker-compose kill
+```
+
+* 下载服务镜像
+
+```bash
+docker-compose pull
+```
+
+* 停止、卸载容器
+
+```bash
+docker-compose down
+```
+
+* 在一个服务上执行一个命令
+
+```bash
+docker-compose run
+```
 
 ## 3. docker-compose.yml属性
 

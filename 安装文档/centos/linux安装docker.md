@@ -19,18 +19,29 @@
 ## 3.安装
 
 * 最高版本安装
+
 ```bash
-    sudo yum install docker-ce docker-ce-cli containerd.io
+    sudo yum install -y docker-ce docker-ce-cli containerd.io
 ```
+
 * 特定版本安装
+
 ```bash
 sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
 ```
-* 开机自启动
+
+* 启动docker
+
 ```bash
-systemctl enable docker
+systemctl start docker
 ```
 
+* 开机自启动
+
+```bash
+systemctl enable docker
+systemctl daemon-reload
+```
 
 ## 2 参考
 
