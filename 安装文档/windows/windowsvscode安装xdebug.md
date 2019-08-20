@@ -22,7 +22,11 @@ xdebug.remote_port=9000
 xdebug.remote_host="localhost"
 ```
 
-## 2.vscode应用商店搜索php xdebug
+## 3.下载php xdebug
+
+* vscode应用商店搜索php xdebug
+
+## 4.配置
 
 * 文件--首选项--设置
 * 搜索：php.validate.executablePath

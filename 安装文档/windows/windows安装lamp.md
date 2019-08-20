@@ -57,7 +57,22 @@ AllowOverride　将denied  改为all
 
 * [下载地址](https://dev.mysql.com/downloads/file/?id=462316)
 
-## 4 参考
+## 4.配置Apache路由重写
+
+* 去除httpd.conf文件中"#LoadModule rewrite_module modules/mod_rewrite.so"前面的"#"号
+
+* 修改httpd.conf文件中的"AllowOverride None"为"AllowOverride all",同时最好将Options也置为"all",否则可能会出问题
+
+* 在项目或httpd.conf中加配置
+
+```bash
+    RewriteEngine on 
+    RewriteRule ^/(.*).html$ /index.php?id=$1 
+```
+
+* 重启apache
+
+## 5.参考
 
 * [文档](https://blog.csdn.net/qq_32144341/article/details/51532207)
 
