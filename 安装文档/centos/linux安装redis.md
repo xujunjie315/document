@@ -7,21 +7,42 @@
   cd redis-5.0.5
   make
 ```
-## 2 配置外网可访问
+## 2 配置redis
 
-* 注释 bind 127.0.0.1
-* requirepass xujunjie
-* protected-mode no
+* 配置redis后台启动
+
+```bash
+  daemonize yes
+```
+
+* 配置redis的端口
+
+```bash
+  port 6379
+```
+
+* 配置redis需密码连接
+
+```bash
+  requirepass xujunjie
+```
+
+* 配置redis外网连接
+
+```bash
+  * bind 127.0.0.1
+  protected-mode no
+```
 
 ## 3 启动redis服务端
 
-```bas
+```bash
   src/redis-server redis.config
 ```
 
 ## 4 直接连接redis
 
-```bas
+```bash
   src/redis-cli
 ```
 
