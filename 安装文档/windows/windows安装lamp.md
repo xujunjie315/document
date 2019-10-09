@@ -38,7 +38,9 @@
 * httpd.conf文件
 LoadModule reqtimeout_module libexec/apache2/mod_reqtimeout.so 　　把前面的#去掉
 Include /private/etc/apache2/extra/httpd-vhosts.conf　　把前面的#去掉
-AllowOverride　将denied  改为all
+.htaccess下面的那个AllowOverride　将denied  改为all
+
+* 重启apache
 
 ## 2.下载并安装php
 
@@ -57,23 +59,9 @@ AllowOverride　将denied  改为all
 
 * [下载地址](https://dev.mysql.com/downloads/file/?id=462316)
 
-## 4.配置Apache路由重写
+## 4.参考
 
-* 去除httpd.conf文件中"#LoadModule rewrite_module modules/mod_rewrite.so"前面的"#"号
-
-* 修改httpd.conf文件中的"AllowOverride None"为"AllowOverride all",同时最好将Options也置为"all",否则可能会出问题
-
-* 在项目或httpd.conf中加配置
-
-```bash
-    RewriteEngine on 
-    RewriteRule ^/(.*).html$ /index.php?id=$1 
-```
-
-* 重启apache
-
-## 5.参考
-
+* [文档](https://www.cnblogs.com/li-mei/p/5959217.html)
 * [文档](https://blog.csdn.net/qq_32144341/article/details/51532207)
 
 
