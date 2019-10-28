@@ -2,7 +2,7 @@
 
 ## 1.下载
 
-* [下载地址](http://pecl.php.net)
+* [下载地址](http://pecl.php.net/package/swoole)
 
 ## 2.选择版本
 
