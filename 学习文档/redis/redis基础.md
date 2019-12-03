@@ -64,6 +64,7 @@ save 60 20000
 dbfilename dump.rdb  #备份文件名
 dir ./               #备份文件目录
 ```
+
 ### 4.aof持久化
 
 * 优势
