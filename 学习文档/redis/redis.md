@@ -11,7 +11,7 @@
 
 ## 2.redis API的使用和理解
 
-### 1.通用命令
+### 2.1 通用命令
 
 ```bash
     keys         #遍历所有key
@@ -28,7 +28,7 @@
 
 * 单线程
 
-### 2.字符串类型
+### 2.2 字符串类型
 
 * 场景：缓存、计数器、分布式锁
 
@@ -54,7 +54,7 @@
     setrange key index value  #设置指定下标的值
 ```
 
-### 3.哈希类型
+### 2.3 哈希类型
 
 ```bash
     hget key field        #设置key
@@ -73,7 +73,7 @@
     hincrbyfloat key field floatCounter #hincrby浮点数版
 ```
 
-### 4.列表类型
+### 2.4 列表类型
 
 ```bash
     rpush key value1 value2  #从右边插入
@@ -98,7 +98,7 @@
     lpush + brpop = message queue      #消息队列
 ```
 
-### 5.集合类型
+### 2.5 集合类型
 
 ```bash
     sadd key element  #向集合key添加元素
@@ -120,10 +120,10 @@
     SADD + SINTER = Social Graph    #社交相关
 ```
 
-### 6.有序集合类型
+### 2.6 有序集合类型
 
 * 排行榜
-
+  
 ```bash
     zadd key score element   #添加score和element
     zrem key element         #删除元素
@@ -141,6 +141,69 @@
     zrevrangebyscore
     zinterstore
     zunionstore
+```
+
+## 3.redis其他功能
+
+### 3.1 慢查询
+
+```bash
+    #支持动态配置
+    config set slowlog-max=len            #多久进入慢查询里
+    config set slowlog-log-slower-than    #慢查询保存条数
+    slowlog get[n]    #获取慢查询队列
+    slowlog len       #获取慢查询队列长度
+    slowlog reset     #清空慢查询队列
+```
+
+### 3.2 pipeline
+
+* 批量执行命令，减少网络时间
+
+### 3.3 发布订阅
+
+```bash
+    publish channel message   #发布命令
+    subscribe [channel]       #订阅频道
+    unsubcribe [channel]      #取消订阅
+    psubscribe [pattern]      #订阅模式
+    punsubscribe [pattern]    #退订指定的模式
+    pubsub channels           #列出至少有一个订阅的额频道
+    pubsub numsub [channel]   #列出给定的频道的订阅者数量
+```
+
+### 3.4 bitmap
+
+* 用户统计
+
+```bash
+    getbit key offset         #获取位图指定索引值
+    setbit key offset value   #给位图指定索引设置值
+    bitcount key [start end]  #获取位图指定范围位值为1的个数
+    bitop op destkey key      #做多个值的and(交集)、or(并集)、not(非)、xor(异或)，并将结果保存在deskey中
+    bitpos key targetBit [start] [end] #计算指定范围对应值为targeBit的位置
+```
+
+### 3.5 hyperloglog
+
+* 极小的空间完成独立数量的统计
+
+```bash
+    pfadd key element [element...]    #向hyperloglog添加元素
+    pfcount key [key...]              #计算hyperloglog的独立总数
+    pfmerge destkey sourcekey [sourcekey] #合并多个hyperloglog
+```
+
+### 3.6 geo
+
+* 地理位置
+
+```bash
+    geo key longitude latitude member          #增加地理位置信息
+    geopos key member [member]                 #获取地理位置
+    geodist key member member [unit]           #计算距离 m(米)、km(千米)、mi(英里)、ft(尺)
+    georadius key longitude latitude 
+    georadiusbymember key member  
 ```
 
 ## 2 参考
