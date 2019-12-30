@@ -5,7 +5,7 @@ class Ws {
     CONST PORT = 8901;
     public $server;
     public function __construct(){
-        $this->server = new swoole_websocket_server(HOST,POSR);
+        $this->server = new swoole_websocket_server(self::HOST,self::POSR);
         $this->server->set([
             'worker_num' => 2,
             'task_worker_num' => 2,

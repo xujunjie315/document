@@ -10,7 +10,7 @@
 ## 2.安装依赖
 
 ```bash
-    sudo yum install -y autoconf automake libtool libdb-devel boost-devel libevent-devel
+    sudo yum install -y autoconf automake libtool libdb-devel boost-devel libevent-devel openssl openssl-devel
 ```
 ## 3.下载源码，选择版本
 
@@ -65,6 +65,7 @@
     rpcpassword=xujunjie123456
     rpcallowip=0.0.0.0/0
     rpcconnect=127.0.0.1
+    walletnotify=/mnt/btc/usdt/tx.sh %s
 ```
 
 * bitcoind -conf=/root/bitcoin.conf
