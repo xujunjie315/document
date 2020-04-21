@@ -13,6 +13,7 @@
 ## 2.安装Nginx
 
 ```bash
+	http://nginx.org/en/linux_packages.html#RHEL-CentOS
     vi /etc/yum.repos.d/nginx.repo
 ```
 ```bash
@@ -84,7 +85,8 @@
 
 ```bash
     location ~ \.php(.*)$ {
-	    fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
+	    # fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
+		fastcgi_pass   127.0.0.1:9000;
 	    fastcgi_index index.php;
 	
 	    #这一句的作用是可以支持tp5的URL访问模式
