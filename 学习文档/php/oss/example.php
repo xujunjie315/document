@@ -13,8 +13,8 @@ class Oss extends Controller
     public function __construct(){
         $this->host = 'a-static.finetech.top';
         $this->imagePath = '/wallet/oss/Oss/image';
-        $accessKeyId = "LTAI4Fp8dJg1AU9aGsbwz1AQ";
-        $accessKeySecret = "eOZyz0ABQ6lqLxkCPQL0ZRp1eJXDEm";
+        $accessKeyId = "xujunjieLTAI4Fp8dJg1AU9aGsbwz1AQ";
+        $accessKeySecret = "xujunjieeOZyz0ABQ6lqLxkCPQL0ZRp1eJXDEm";
         $endpoint = "http://oss-cn-beijing.aliyuncs.com";
         
         try {
