@@ -13,21 +13,21 @@
 * http://nginx.org/en/download.html
 
 ```bash
-    wget http://nginx.org/download/nginx-1.16.1.tar.gz
-    tar -xzf nginx-1.16.1.tar.gz
-    cd nginx-1.16.1
     yum -y install openssl openssl-devel
     wget https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.gz
     tar -xzf pcre-8.43.tar.gz
     wget http://zlib.net/zlib-1.2.11.tar.gz
     tar -xzf zlib-1.2.11.tar.gz
+    wget http://nginx.org/download/nginx-1.16.1.tar.gz
+    tar -xzf nginx-1.16.1.tar.gz
+    cd nginx-1.16.1
     #配置
-    ./configure
-    --sbin-path=/usr/local/nginx/nginx
-    --conf-path=/usr/local/nginx/nginx.conf
-    --pid-path=/usr/local/nginx/nginx.pid
-    --with-http_ssl_module
-    --with-pcre=../pcre-8.43
+    ./configure \
+    --sbin-path=/usr/local/nginx/nginx \
+    --conf-path=/usr/local/nginx/nginx.conf \
+    --pid-path=/usr/local/nginx/nginx.pid \
+    --with-http_ssl_module \
+    --with-pcre=../pcre-8.43 \
     --with-zlib=../zlib-1.2.11
     #编译
     make
@@ -40,10 +40,10 @@
 ### 3.1 官网下载源码包
 
 ```bash
+    yum -y install libxml2-devel
     wget https://www.php.net/distributions/php-7.3.14.tar.gz
     tar -xzf php-7.3.14.tar.gz
     cd php-7.3.14
-    yum -y install libxml2-devel
     #配置
     ./configure --enable-fpm --with-mysql --with-mysqli --with-pdo-mysql
     #编译
