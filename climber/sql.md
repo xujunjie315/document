@@ -98,6 +98,29 @@ create table if not exists `stock`(
     `status` enum(0,1) not null default '1' comment '是否有效，1：有效'
 )engine=innodb default charset=utf8 comment='股票';
 ```
+
+> stock_rate 股票收益
+
+字段名称|类型|描述|备注
+-|-|-|-|
+id|int|主键|自增长
+stock_id|int|股票编号
+month|int|月份
+rate|tinyint|收益率
+
+```bash
+create table if not exists `stock`(
+    `id` int unsigned  primary key auto_increment comment '主键ID',
+    `name` varchar(32) not null default '' comment '名称',
+    `code` char(6) not null default '' comment '编码',
+    `status` enum(0,1) not null default '1' comment '是否有效，1：有效'
+)engine=innodb default charset=utf8 comment='股票';
+```
+
+> stock_quarter 股票季度涨幅
+
+
+
 > account 账户表
 
 字段名称|类型|描述|备注
