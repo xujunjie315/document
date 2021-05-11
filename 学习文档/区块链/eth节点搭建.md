@@ -4,8 +4,8 @@
 
 ```bash
     yum update -y && yum install git wget bzip2 vim gcc-c++ ntp epel-release nodejs cmake -y
-    wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz
-    tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
+    wget https://dl.google.com/go/go1.15.linux-amd64.tar.gz
+    tar -C /usr/local -xzf go1.15.linux-amd64.tar.gz
     echo 'export GOROOT=/usr/local/go' >> /etc/profile  
     echo 'export PATH=$PATH:$GOROOT/bin' >> /etc/profile  
     echo 'export GOPATH=/root/go' >> /etc/profile
@@ -29,7 +29,7 @@
 ## 3.启动
 
 ```bash
-    geth --rpc --rpcapi 'db,eth,net,web3,personal' --rpcaddr '0.0.0.0' --rpcport 9508 --datadir /root/gethData/ --cache 512 console 2>> /root/gethData/geth.log
+    nohup geth --rpc --rpcapi 'db,eth,net,web3,personal' --rpcaddr '0.0.0.0' --rpcport 9508 --datadir /root/gethData/ --cache 512 console 2>> /root/gethData/geth.log
 ```
 
 ## 4.参考
