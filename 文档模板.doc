@@ -1,0 +1,43 @@
+
+
+    
+##### 简要描述
+
+- 发布任务接口
+
+##### 请求URL
+- ` http://xx.com/api/login/register `
+  
+##### 请求方式
+- POST 
+
+##### 参数
+
+|参数名|必选|类型|说明|
+|:----  |:--- |:----- |:----- |
+|user_name |是  |string |用户名 |
+|password |是  |string |密码 |
+|affirm_password |是 |string |确认密码  |
+|pay_password |是 |string |支付密码 |
+|invite_code |否 |string |邀请码 |
+|region |是 |string |地区 |
+|region_id |是 |int |地区编号 |
+
+##### 返回示例 
+
+``` 
+{
+    "success": true,
+    "data": {
+        "user_name": "xujunjie",
+        "password": "$2y$10$mLP.To.Pw60lNILzKGTFvuv4o.Vho7fWxRFEY5.hyp008a3AyWDsG",
+        "pay_password": "$2y$10$NtK6K7FSj81JWxhto1gZve9j4skGxjL4cp76ne/uHEcljXBdi3JdW",
+        "invite_code": "d71843",
+        "region": "湖北武汉",
+        "create_time": 1610289677,
+        "promoter_id": 11,
+        "note": "4/5/6/7/8/9/10/11",
+        "id": 14
+    }
+}
+```
