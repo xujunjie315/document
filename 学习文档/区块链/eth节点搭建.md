@@ -30,6 +30,8 @@
 
 ```bash
     nohup geth --rpc --rpcapi 'db,eth,net,web3,personal' --rpcaddr '0.0.0.0' --rpcport 9508 --datadir /root/gethData/ --cache 512 console 2>> /root/gethData/geth.log
+    
+    --allow-insecure-unlock  #允许http解锁账户
 ```
 
 ## 4.测试私链
